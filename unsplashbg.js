@@ -172,13 +172,13 @@ var unsplashBgUpdater = {
                 .then(function (json) {
                     if (json.success.toString() == 'true') {
                         unsplashBgUpdater._image = new Image();
-                        unsplashBgUpdater._image.crossOrigin = 'allow';
+                        unsplashBgUpdater._image.crossOrigin = 'anonymous';
                         unsplashBgUpdater._image.onload = function () {
                             var brightness = unsplashBgUpdater.get_image_brightness(this);
                             unsplashBgUpdater.update_bg(json.url + unsplashBgUpdater.url_postfix, brightness);
                             unsplashBgUpdater.update_copyright(json.image_user_name, json.image_user_url + unsplashBgUpdater.url_postfix);
                         };
-                        unsplashBgUpdater._image.src = json.url + +unsplashBgUpdater.url_postfix;
+                        unsplashBgUpdater._image.src = json.url + unsplashBgUpdater.url_postfix;
                     } else {
                         console.log('Unable to update Unsplash BG. Response was not successful: ', json.error.toString());
                         clearInterval(unsplashBgUpdater.timer);
@@ -193,9 +193,9 @@ var unsplashBgUpdater = {
     "update_bg": function (url, brightness) {
         if (unsplashBgUpdater.roll == 0) {
             if (document.all) {
-                unsplashBgUpdater.fakeElement.style.setAttribute('cssText', 'background: linear-gradient(rgba(0, 0, 0, ' + (brightness / 255).toFixed(4).toString() + '), rgba(0, 0, 0, ' + (brightness / 255).toFixed(4).toString() + ')),rgba(34, 45, 50, 0.7) url("' + url + '") no-repeat center fixed !important;');
+                unsplashBgUpdater.fakeElement.style.setAttribute('cssText', 'background: linear-gradient(rgba(0, 0, 0, ' + (brightness / 300).toFixed(4).toString() + '), rgba(0, 0, 0, ' + (brightness / 255).toFixed(4).toString() + ')),rgba(34, 45, 50, 0.7) url("' + url + '") no-repeat center fixed !important;');
             } else {
-                unsplashBgUpdater.fakeElement.setAttribute('style', 'background: linear-gradient(rgba(0, 0, 0, ' + (brightness / 255).toFixed(4).toString() + '), rgba(0, 0, 0, ' + (brightness / 255).toFixed(4).toString() + ')), rgba(34, 45, 50, 0.7) url("' + url + '") no-repeat center fixed !important;');
+                unsplashBgUpdater.fakeElement.setAttribute('style', 'background: linear-gradient(rgba(0, 0, 0, ' + (brightness / 300).toFixed(4).toString() + '), rgba(0, 0, 0, ' + (brightness / 255).toFixed(4).toString() + ')), rgba(34, 45, 50, 0.7) url("' + url + '") no-repeat center fixed !important;');
             }
             anime({
                 targets: '#unsplash_bg_updater_fake_element',
@@ -212,9 +212,9 @@ var unsplashBgUpdater = {
             unsplashBgUpdater.roll = 1;
         } else {
             if (document.all) {
-                unsplashBgUpdater.mainElement.style.setAttribute('cssText', 'background: linear-gradient(rgba(0, 0, 0, ' + (brightness / 255).toFixed(4).toString() + '), rgba(0, 0, 0, ' + (brightness / 255).toFixed(4).toString() + ')),rgba(34, 45, 50, 0.7) url("' + url + '") no-repeat center fixed !important;');
+                unsplashBgUpdater.mainElement.style.setAttribute('cssText', 'background: linear-gradient(rgba(0, 0, 0, ' + (brightness / 300).toFixed(4).toString() + '), rgba(0, 0, 0, ' + (brightness / 255).toFixed(4).toString() + ')),rgba(34, 45, 50, 0.7) url("' + url + '") no-repeat center fixed !important;');
             } else {
-                unsplashBgUpdater.mainElement.setAttribute('style', 'background: linear-gradient(rgba(0, 0, 0, ' + (brightness / 255).toFixed(4).toString() + '), rgba(0, 0, 0, ' + (brightness / 255).toFixed(4).toString() + ')), rgba(34, 45, 50, 0.7) url("' + url + '") no-repeat center fixed !important;');
+                unsplashBgUpdater.mainElement.setAttribute('style', 'background: linear-gradient(rgba(0, 0, 0, ' + (brightness / 300).toFixed(4).toString() + '), rgba(0, 0, 0, ' + (brightness / 255).toFixed(4).toString() + ')), rgba(34, 45, 50, 0.7) url("' + url + '") no-repeat center fixed !important;');
             }
             anime({
                 targets: '#unsplash_bg_updater_main_element',
