@@ -1,0 +1,8 @@
+{
+  "allowed_domain": "example.com",
+  "accessToken": "1111111111111111111111111111111111111111111111111111111111111111",
+  "query": "",
+  "width": 1920,
+  "height": 1080,
+  "orientation": "landscape"
+}
