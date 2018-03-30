@@ -33,8 +33,8 @@ Before you start using it, you will need to configure several settings.
 |allowed_domain| Any FQDN for `Access-Control-Allow-Origin` returned by __getUnsplashBg.php__  |
 |accessToken | You can get it after registering the application on [Unsplash API](https://unsplash.com/developers)|
 |query| Query to API for better search |
-|width|Preffered image width|
-|height|Preffered image height|
+|width|Preferred image width|
+|height|Preferred image height|
 |orientation| landscape / portarait / squarish |
 
 
