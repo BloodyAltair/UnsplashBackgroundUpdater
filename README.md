@@ -29,7 +29,7 @@ Before you start using it, you will need to configure several settings.
 }
 ```
 |Setting name|Value description|
-|--|--|
+|---|---|
 |allowed_domain| Any FQDN for `Access-Control-Allow-Origin` returned by __getUnsplashBg.php__  |
 |accessToken | You can get it after registering the application on [Unsplash API](https://unsplash.com/developers)|
 |query| Query to API for better search |
