@@ -193,9 +193,9 @@ var unsplashBgUpdater = {
     "update_bg": function (url, brightness) {
         if (unsplashBgUpdater.roll == 0) {
             if (document.all) {
-                unsplashBgUpdater.fakeElement.style.setAttribute('cssText', 'background: linear-gradient(rgba(0, 0, 0, ' + (brightness / 300).toFixed(4).toString() + '), rgba(0, 0, 0, ' + (brightness / 255).toFixed(4).toString() + ')),rgba(34, 45, 50, 0.7) url("' + url + '") no-repeat center fixed !important;');
+                unsplashBgUpdater.fakeElement.style.setAttribute('cssText', 'background: linear-gradient(rgba(0, 0, 0, ' + (brightness / 255).toFixed(4).toString() + '), rgba(0, 0, 0, ' + (brightness / 255).toFixed(4).toString() + ')),rgba(34, 45, 50, 0.7) url("' + url + '") no-repeat center fixed !important;background-size: cover !important;');
             } else {
-                unsplashBgUpdater.fakeElement.setAttribute('style', 'background: linear-gradient(rgba(0, 0, 0, ' + (brightness / 300).toFixed(4).toString() + '), rgba(0, 0, 0, ' + (brightness / 255).toFixed(4).toString() + ')), rgba(34, 45, 50, 0.7) url("' + url + '") no-repeat center fixed !important;');
+                unsplashBgUpdater.fakeElement.setAttribute('style', 'background: linear-gradient(rgba(0, 0, 0, ' + (brightness / 255).toFixed(4).toString() + '), rgba(0, 0, 0, ' + (brightness / 255).toFixed(4).toString() + ')), rgba(34, 45, 50, 0.7) url("' + url + '") no-repeat center fixed !important;background-size: cover !important;');
             }
             anime({
                 targets: '#unsplash_bg_updater_fake_element',
@@ -212,9 +212,9 @@ var unsplashBgUpdater = {
             unsplashBgUpdater.roll = 1;
         } else {
             if (document.all) {
-                unsplashBgUpdater.mainElement.style.setAttribute('cssText', 'background: linear-gradient(rgba(0, 0, 0, ' + (brightness / 300).toFixed(4).toString() + '), rgba(0, 0, 0, ' + (brightness / 255).toFixed(4).toString() + ')),rgba(34, 45, 50, 0.7) url("' + url + '") no-repeat center fixed !important;');
+                unsplashBgUpdater.mainElement.style.setAttribute('cssText', 'background: linear-gradient(rgba(0, 0, 0, ' + (brightness / 255).toFixed(4).toString() + '), rgba(0, 0, 0, ' + (brightness / 255).toFixed(4).toString() + ')),rgba(34, 45, 50, 0.7) url("' + url + '") no-repeat center fixed !important;background-size: cover !important;');
             } else {
-                unsplashBgUpdater.mainElement.setAttribute('style', 'background: linear-gradient(rgba(0, 0, 0, ' + (brightness / 300).toFixed(4).toString() + '), rgba(0, 0, 0, ' + (brightness / 255).toFixed(4).toString() + ')), rgba(34, 45, 50, 0.7) url("' + url + '") no-repeat center fixed !important;');
+                unsplashBgUpdater.mainElement.setAttribute('style', 'background: linear-gradient(rgba(0, 0, 0, ' + (brightness / 255).toFixed(4).toString() + '), rgba(0, 0, 0, ' + (brightness / 255).toFixed(4).toString() + ')), rgba(34, 45, 50, 0.7) url("' + url + '") no-repeat center fixed !important;background-size: cover !important;');
             }
             anime({
                 targets: '#unsplash_bg_updater_main_element',
@@ -305,80 +305,80 @@ var unsplashBgUpdater = {
     "url": "https://example.com",
     "url_postfix": '&utm_source=<YOUR_APP_NAME>&utm_medium=referral',
     "css": "* {" +
-    "          background-blend-mode: darken;" +
-    "}" +
-    "body { " +
-    "          background: rgba(34, 45, 50, 0.9) !important;" +
-    "          pointer-events: all;" +
-    "}" +
-    ".unsplash_bg_updater_copyright {" +
-    "          background-color: rgba(0,0,0,0.78);" +
-    "          max-height: 20%;" +
-    "          position: fixed;" +
-    "          z-index: 10000000000000;" +
-    "          border-radius: 10px;" +
-    "          padding: 0.5%;" +
-    "/*          font-family: 'Nanum Brush Script', cursive;*/" +
-    "          font-family: 'Hack', monospace;" +
-    "          overflow: visible;" +
-    "          bottom: 0;" +
-    "          right: 0;" +
-    "          color: #e6daba;" +
-    "/*          font-size: 18px;*/" +
-    "          font-size: 14px;" +
-    "}" +
-    ".unsplash_bg_updater_copyright > strong > span > a,.unsplash_bg_updater_copyright > strong > span > a:link,.unsplash_bg_updater_copyright > strong > span > a:visited,.unsplash_bg_updater_copyright > strong > span > a:hover,.unsplash_bg_updater_copyright > strong > span > a:active,.unsplash_bg_updater_copyright > strong > span > a:focus {" +
-    "          text-decoration:none !important;" +
-    "          color:#3db930;" +
-    "          border-bottom: 1px dashed #e6daba;" +
-    "          padding-bottom: 2px;" +
-    "}" +
-    ".unsplash_bg_updater_copyright > strong > span > a, .unsplash_bg_updater_copyright > strong > span > a:focus, .unsplash_bg_updater_copyright > strong > span > a:hover, .unsplash_bg_updater_copyright > strong > span > a:active {" +
-    "          border-bottom: 1px dashed #e6daba;" +
-    "          padding-bottom: 2px;" +
-    "          color:#93620d;" +
-    "}" +
-    ".unsplash_bg_updater_copyright > strong > span > a:visited {" +
-    "          border-bottom: initial !important;" +
-    "          padding-bottom: initial !important;" +
-    "          color:#93620d;" +
-    "}" +
-    "#unsplash_bg_updater_main_element {" +
-    "          background-repeat: no-repeat !important;" +
-    "          background-size: 100% !important;" +
-    "          background-position: center !important;" +
-    "          background-clip: border-box !important;" +
-    "          background: rgba(34, 45, 50, 0.7);" +
-    "          backface-visibility: hidden;" +
-    "          opacity: 1;" +
-    "          position: absolute;" +
-    "          pointer-events: all;" +
-    "          top: 0;" +
-    "          left: 0;" +
-    "          bottom: 0;" +
-    "          right: 0;" +
-    "          z-index: calc(zindexbg - 1) !important;" +
-    "}" +
-    ".unsplash_bg_updater_copyright_hidden {" +
-    "          visibility: hidden;" +
-    "          opacity: 0;" +
-    "}" +
-    "#unsplash_bg_updater_fake_element {" +
-    "          background-repeat: no-repeat !important;" +
-    "          background-size: 100% !important;" +
-    "          background-position: center !important;" +
-    "          background-clip: border-box !important;" +
-    "          background: rgba(34, 45, 50, 0.7);" +
-    "          backface-visibility: hidden;" +
-    "          opacity: 0;" +
-    "          position: absolute;" +
-    "          top: 0;" +
-    "          bottom: 0;" +
-    "          left: 0;" +
-    "          right: 0;" +
-    "          pointer-events: all;" +
-    "          z-index: zindexbg !important;" +
-    "}",
+        "          background-blend-mode: initial;" +
+        "}" +
+        "body { " +
+        "          background: rgba(34, 45, 50, 0.9) !important;" +
+        "          pointer-events: all;" +
+        "}" +
+        ".unsplash_bg_updater_copyright {" +
+        "          background-color: rgba(0,0,0,0.78);" +
+        "          max-height: 20%;" +
+        "          position: fixed;" +
+        "          z-index: 10000000000000;" +
+        "          border-radius: 10px;" +
+        "          padding: 0.5%;" +
+        "/*          font-family: 'Nanum Brush Script', cursive;*/" +
+        "          font-family: 'Hack', monospace;" +
+        "          overflow: visible;" +
+        "          bottom: 0;" +
+        "          right: 0;" +
+        "          color: #e6daba;" +
+        "/*          font-size: 18px;*/" +
+        "          font-size: 14px;" +
+        "}" +
+        ".unsplash_bg_updater_copyright > strong > span > a,.unsplash_bg_updater_copyright > strong > span > a:link,.unsplash_bg_updater_copyright > strong > span > a:visited,.unsplash_bg_updater_copyright > strong > span > a:hover,.unsplash_bg_updater_copyright > strong > span > a:active,.unsplash_bg_updater_copyright > strong > span > a:focus {" +
+        "          text-decoration:none !important;" +
+        "          color:#3db930;" +
+        "          border-bottom: 1px dashed #e6daba;" +
+        "          padding-bottom: 2px;" +
+        "}" +
+        ".unsplash_bg_updater_copyright > strong > span > a, .unsplash_bg_updater_copyright > strong > span > a:focus, .unsplash_bg_updater_copyright > strong > span > a:hover, .unsplash_bg_updater_copyright > strong > span > a:active {" +
+        "          border-bottom: 1px dashed #e6daba;" +
+        "          padding-bottom: 2px;" +
+        "          color:#93620d;" +
+        "}" +
+        ".unsplash_bg_updater_copyright > strong > span > a:visited {" +
+        "          border-bottom: initial !important;" +
+        "          padding-bottom: initial !important;" +
+        "          color:#93620d;" +
+        "}" +
+        "#unsplash_bg_updater_main_element {" +
+        "          background-repeat: no-repeat !important;" +
+        "          background-size: 100% !important;" +
+        "          background-position: center !important;" +
+        "          background-clip: border-box !important;" +
+        "          background: rgba(34, 45, 50, 0.7);" +
+        "          backface-visibility: hidden;" +
+        "          opacity: 1;" +
+        "          position: absolute;" +
+        "          pointer-events: all;" +
+        "          top: 0;" +
+        "          left: 0;" +
+        "          bottom: 0;" +
+        "          right: 0;" +
+        "          z-index: calc(zindexbg - 1) !important;" +
+        "}" +
+        ".unsplash_bg_updater_copyright_hidden {" +
+        "          visibility: hidden;" +
+        "          opacity: 0;" +
+        "}" +
+        "#unsplash_bg_updater_fake_element {" +
+        "          background-repeat: no-repeat !important;" +
+        "          background-size: 100% !important;" +
+        "          background-position: center !important;" +
+        "          background-clip: border-box !important;" +
+        "          background: rgba(34, 45, 50, 0.7);" +
+        "          backface-visibility: hidden;" +
+        "          opacity: 0;" +
+        "          position: absolute;" +
+        "          top: 0;" +
+        "          bottom: 0;" +
+        "          left: 0;" +
+        "          right: 0;" +
+        "          pointer-events: all;" +
+        "          z-index: zindexbg !important;" +
+        "}",
     "insert": 'body',
     "type": 'tag',
     "roll": 0
