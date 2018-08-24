@@ -103,7 +103,7 @@ If you chose a simple script - we only need one call
 unsplashBgUpdater.init(interval, selector, selector_type, url, url_postfix);
 ```
 |Param name|Type|Param description|
-|--|--|--|
+|---|---|---|
 |interval|Integer|Refresh interval, seconds; e.g: __5__|
 |selector|String|Current background selector; e.g: __body__, __rl-bg__|
 |selector_type|String|Current background selector type; May be: __tag__( e.g for body), __class__, __id__
