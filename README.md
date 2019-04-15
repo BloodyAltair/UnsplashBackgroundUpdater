@@ -107,7 +107,15 @@ unsplashBgUpdater.init(interval, selector, selector_type, url, url_postfix);
 |interval|Integer|Refresh interval, seconds; e.g: __5__|
 |selector|String|Current background selector; e.g: __body__, __rl-bg__|
 |selector_type|String|Current background selector type; May be: __tag__( e.g for body), __class__, __id__
-|url|String|Full URL to __getUnsplashBg.php__|
+|url|String \| async function|Full URL to __getUnsplashBg.php OR__ async function returning something like [#Async function return object](#async-function-return-object)|
 |url_postfix|String|In accordance with Unsplash API rules, in all links to pictures from the service you must specify the UTM parameters to identify your application; e.g __"&utm\_source=My%20Awesome%20Application&utm\_medium=referral"__|
 
-
+#### Async function return object
+```js
+{
+	"success": true,
+	"url": "https://url/to/image",
+	"image_user_name": "John Doe",
+	"image_user_url": "https://url/to/John%20Doe/profile"
+}
+```
