@@ -1,5 +1,5 @@
 /*
- * Copyright © 2018 Denis Vadimov aka BloodyAltair
+ * Copyright © 2019 Denis Vadimov aka BloodyAltair
  * This file is part of UnsplashBackgroundUpdater.
  *
  * UnsplashBackgroundUpdater is free software: you can redistribute it and/or modify
@@ -26,7 +26,11 @@ var unsplashBgUpdater = {
             /*
                 Getting Parameters
              */
-            unsplashBgUpdater.url = url || unsplashBgUpdater.url;
+            if(typeof url == "function") {
+                unsplashBgUpdater.getData = url;
+            } else {
+                unsplashBgUpdater.url = url || unsplashBgUpdater.url;
+            }
             unsplashBgUpdater.url_postfix = url_postfix || unsplashBgUpdater.url_postfix;
             unsplashBgUpdater.interval = interval || unsplashBgUpdater.interval;
             unsplashBgUpdater.insert = insert || unsplashBgUpdater.insert;
@@ -164,11 +168,8 @@ var unsplashBgUpdater = {
         }
     },
     "updater": function () {
-        if (unsplashBgUpdater.check_tab_active() == true) {
-            fetch(unsplashBgUpdater.url, unsplashBgUpdater.fetch_opts)
-                .then(function (response) {
-                    return response.json();
-                })
+        if (unsplashBgUpdater.check_tab_active() === true) {
+                unsplashBgUpdater.getData()
                 .then(function (json) {
                     if (json.success.toString() == 'true') {
                         unsplashBgUpdater._image = new Image();
@@ -189,6 +190,12 @@ var unsplashBgUpdater = {
                     clearInterval(unsplashBgUpdater.timer);
                 });
         }
+    },
+    "getData": function() {
+        return fetch(unsplashBgUpdater.url, unsplashBgUpdater.fetch_opts)
+        .then(function (response) {
+            return response.json();
+        })
     },
     "update_bg": function (url, brightness) {
         if (unsplashBgUpdater.roll == 0) {
@@ -392,3 +399,4 @@ Number.isInteger = Number.isInteger || function (value) {
         Number.isFinite(value) &&
         !(value % 1);
 };
+
