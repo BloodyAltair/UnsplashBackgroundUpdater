@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © 2018 Denis Vadimov aka BloodyAltair
+ * Copyright © 2019 Denis Vadimov aka BloodyAltair
  * This file is part of UnsplashBackgroundUpdater.
  *
  * UnsplashBackgroundUpdater is free software: you can redistribute it and/or modify
